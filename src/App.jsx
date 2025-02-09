@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import './App.css'
-import Counter from './components/counter'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import ContactUs from './pages/ContactUs'
