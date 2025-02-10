@@ -6,6 +6,7 @@ import Score from './pages/Score'
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import { Toaster } from 'react-hot-toast'
+import Footer from './components/Footer'
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Route path='/scores' element={<Score />} />
     </Routes>
     <Toaster  position="bottom-center"/>
+    <Footer/>
     </>
   )
 }

@@ -1,10 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit";
-
+import { configureStore,  } from "@reduxjs/toolkit";
+import playerReducer from "./Slices/scoresSlice"
 const store = configureStore({
-  reducer: {
-    // Add your reducers here
-
-  } 
+  reducer: playerReducer, 
 });
 
 export default store;

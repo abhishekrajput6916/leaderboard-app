@@ -1,22 +1,32 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { addPlayer } from "../redux/Slices/scoresSlice";
 
 function Home() {
-  const initialValues = { name: "", score: "" };
-  const [formValues, setFormValues] = useState(initialValues);
+  const [errors, setErrors] = useState({ nameError:  "Name should not be empty!", scoreError:  "Score should not be empty!" });
+  const [formValues, setFormValues] = useState({});
+  const dispatch = useDispatch();
+
   function handleInputChange(e) {
     const { name, value } = e.target;
-    setFormValues(old=> {
-      return {...old, [name]:value};
-    })
+
+    setFormValues((old) => {
+      return { ...old, [name]: value };
+    });
     console.log(formValues);
-    // console.log(name, value);
   }
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(e.target);
-    toast.success("Score Submitted Successfully!!!");
+    if (!formValues.name) {
+      toast.error(errors.nameError);
+    }else if(!formValues.score){
+      toast.error(errors.scoreError);
+    }else{
+      dispatch(addPlayer(formValues));
+      toast.success("Score added successfully!!!");
+    } 
   }
   return (
     <section className=" py-8 w-screen text-white flex flex-col justify-center">
@@ -41,7 +51,7 @@ function Home() {
             className="py-1 px-3 border-2 border-gray-300/50 rounded-md"
             placeholder="Eg. John Smith"
             name="name"
-            // value={formValues.name}
+            value={formValues.name}
             onChange={handleInputChange}
           />
           <label className="text-lg" htmlFor="score">
@@ -49,22 +59,23 @@ function Home() {
           </label>
           <input
             id="score"
-            type="text"
-            className="py-1 px-3 border-2 border-gray-300/50  rounded-md"
+            type="number"
+            className="py-1 px-3 border-2 border-gray-300/50  rounded-md [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none "
             placeholder="Ex. 200"
             name="score"
-            // value={formValues.score}
+            value={formValues.score}
             onChange={handleInputChange}
           />
         </div>
         <div className="flex gap-4">
-          <button
+          <input
             type="submit"
-            name="Submit"
-            className="py-1 px-3 mt-2 border-2 border-gray-300/50 hover:bg-slate-600 ease-linear transition-all duration-150  outline-none focus:outline-none rounded-md cursor-pointer "
-          >
-            Submit
-          </button>
+            name="submit"
+            value="Submit"
+            className="py-1 px-3 mt-2 border-2 border-gray-300/50 hover:bg-slate-600 ease-linear transition-all duration-150  rounded-md cursor-pointer "
+          />
+
+          {/* </input> */}
           <Link
             to={"/scores"}
             className="py-1 px-3 mt-2 border-2 border-gray-300/50 hover:bg-slate-600 ease-linear transition-all duration-150  outline-none focus:outline-none rounded-md cursor-pointer "
