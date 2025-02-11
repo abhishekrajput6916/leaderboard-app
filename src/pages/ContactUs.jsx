@@ -27,7 +27,7 @@ function ContactUs() {
         </div>
       </div>
 
-        <ContactForm className='flex items-center justify-center w-full lg:px-4' />
+        <ContactForm className='flex items-center justify-center w-full lg:px-4 px-4' />
     </div>
   )
 }

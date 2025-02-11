@@ -1,0 +1,10 @@
+[33m2d3a66b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: checkout: moving from 2d3a66bc08718c6b1868cf84085e3573dfb8cbbc to master
+[33m2d3a66b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: checkout: moving from master to 2d3a66b
+[33m2d3a66b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: commit: created-contact-us page
+[33m83d6d52[m HEAD@{3}: commit: created home and score listing page
+[33m36e1e86[m HEAD@{4}: commit: .
+[33ma14aa64[m HEAD@{5}: commit: removed counter
+[33m30174e2[m HEAD@{6}: commit (merge): Merge branch 'master' of https://github.com/abhishekrajput6916/leaderboard-app
+[33m779df3b[m HEAD@{7}: checkout: moving from master to master
+[33m779df3b[m HEAD@{8}: commit: test
+[33mb5c4415[m HEAD@{9}: commit (initial): initialised project
