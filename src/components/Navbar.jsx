@@ -16,8 +16,8 @@ const LINKS = [
     link: "/contact-us",
   },
   {
-    name: "Scores",
-    link: "/scores",
+    name: "Scoreboard",
+    link: "/scoreboard",
   },
 ];
 function Navbar() {

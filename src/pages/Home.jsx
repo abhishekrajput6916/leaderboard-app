@@ -29,7 +29,7 @@ function Home() {
     } 
   }
   return (
-    <section className=" py-8 w-screen text-white flex flex-col justify-center">
+    <section className=" py-8 w-full text-white flex flex-col justify-center">
       <h1 className="mx-auto mt-4 md:text-3xl text-2xl py-8  font-extrabold tracking-wider">
         The Leaderboard App
       </h1>
@@ -41,7 +41,7 @@ function Home() {
         action="#"
         onSubmit={handleFormSubmit}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2  gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           <label className="text-lg " htmlFor="player-name">
             Enter Player Name :
           </label>
@@ -77,7 +77,7 @@ function Home() {
 
           {/* </input> */}
           <Link
-            to={"/scores"}
+            to={"/scoreboard"}
             className="py-1 px-3 mt-2 border-2 border-gray-300/50 hover:bg-slate-600 ease-linear transition-all duration-150  outline-none focus:outline-none rounded-md cursor-pointer "
           >
             View Scores
