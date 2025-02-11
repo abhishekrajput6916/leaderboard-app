@@ -1,19 +1,22 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 
-const Slider = ({slides}) => {
-  return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >      
-      {slides.map(slide=><SwiperSlide>{slide}</SwiperSlide>)}
-    </Swiper>
-  );
+const Slider = ({ slides }) => {
+    return (
+        <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{draggable:true}}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+        >
+            {slides.map(slide => <SwiperSlide>{slide}</SwiperSlide>)}
+        </Swiper>
+    );
 };
 
 export default Slider;

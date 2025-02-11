@@ -31,7 +31,7 @@ function AboutUs() {
       <section className="py-8 lg:py-14 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-9">
-            <div className="img-box">
+            <div className="img-box max-w-sm mx-auto">
               <img src={user2} alt="About Us tailwind page"
                 className="max-lg:mx-auto object-cover rounded-2xl" />
             </div>
@@ -59,7 +59,7 @@ function AboutUs() {
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-9 ">
 
             <div className="lg:pr-24 flex items-center">
-              <div className="data w-full">
+              <div className="data w-full max-w-sm mx-auto">
                 <img src={user3} alt="About Us tailwind page"
                   className="block lg:hidden mb-9 mx-auto object-cover" />
                 <h2 className="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center">We

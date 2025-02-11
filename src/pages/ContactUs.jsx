@@ -15,12 +15,12 @@ function ContactUs() {
       </div> */}
       <div className='flex flex-col gap-4 max-w-md w-11/12 xl:max-w-xl xl:mx-8'>
         <div className="flex flex-col gap-2 ">
-          <h1 className="text-3xl font-bold tracking-wide">Contact Us</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <h1 className="text-3xl lg:text-5xl font-bold tracking-wide">Contact Us</h1>
+          <p className='lg:text-xl'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </div>
         <div>
-          <Link to={'#'} target="blank"  className='font-semibold flex gap-2 items-center'><MdOutlineEmail className='text-lg' /><u className='mb-1 cursor-pointer hover:text-slate-500' onClick={() => window.location = 'mailto:abhishekrajput9111606916@gmail.com'}>abc@gmail.com</u></Link>
-          <Link to={'tel:+1234567890'} className='font-semibold flex gap-2 items-center'><IoCallOutline className='text-lg' /><u className='mb-1 cursor-pointer hover:text-slate-500'>+91 99999 99999</u></Link>
+          <Link to={'#'} target="blank"  className='font-semibold w-fit flex gap-2 lg:text-xl items-center'><MdOutlineEmail className='text-lg lg:text-2xl' /><u className='mb-1 cursor-pointer hover:text-slate-500' onClick={() => window.location = 'mailto:abhishekrajput9111606916@gmail.com'}>abc@gmail.com</u></Link>
+          <Link to={'tel:+1234567890'} className='font-semibold  w-fit flex gap-2 items-center lg:text-xl'><IoCallOutline className='text-lg lg:text-2xl' /><u className='mb-1 cursor-pointer hover:text-slate-500'>+91 99999 99999</u></Link>
         </div>
         <div className='w-full rounded-2xl overflow-hidden'>
           <Map className={"h-56 xl:h-80 w-full object-cover object-left-top"} />

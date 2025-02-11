@@ -21,7 +21,7 @@ function ScoreBoard() {
       )
     );
   }
-  function handleDelete(id){
+  function handleDelete(id) {
     dispatch(removePlayer(id))
     setFilteredPlayers(players);
   }
@@ -33,11 +33,11 @@ function ScoreBoard() {
           <input
             type="text"
             placeholder="Enter player name"
-            className="focus:outline-none"
+            className="focus:outline-none lg:text-xl"
             onChange={handleSearch}
           />
         </div>
-<Link to={'/home'} ><TiUserAdd className="text-xl lg:text-3xl lg:mx-4"/></Link>
+        <Link to={'/home'} ><TiUserAdd className="text-xl lg:text-3xl lg:mx-4" /></Link>
       </div>
       {players.length ? (
         <div>
@@ -75,12 +75,12 @@ function ScoreBoard() {
         </div>
       ) : (
         <div className="text-center mt-4 flex items-center flex-col gap-4 justify-center">
-          <p>No players found add some players first</p>
+          <p className="lg:text-2xl">No players found add some players first</p>
           <Link to={"/home"} className="cursor-pointer">
-          <button
-            name="submit"
-            className="py-1 px-3 mt-2 border-2  border-gray-300/50 hover:bg-slate-600 ease-linear transition-all duration-150  rounded-md cursor-pointer "
-          >Add Players</button>
+            <button
+              name="submit"
+              className="py-1 px-3 mt-2 border-2 lg:text-2xl border-gray-300/50 hover:bg-slate-600 ease-linear transition-all duration-150  rounded-md cursor-pointer "
+            >Add Players</button>
           </Link>
         </div>
       )}
