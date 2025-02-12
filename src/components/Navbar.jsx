@@ -6,6 +6,13 @@ const LINKS = [
   {
     name: "Home",
     link: "/home",
+  },{
+    name: "Scoreboard",
+    link: "/scoreboard",
+  },
+  {
+    name: "Popular Players",
+    link: "/popular-players",
   },
   {
     name: "About Us",
@@ -15,14 +22,7 @@ const LINKS = [
     name: "Contact Us",
     link: "/contact-us",
   },
-  {
-    name: "Scoreboard",
-    link: "/scoreboard",
-  },
-  {
-    name: "Popular Players",
-    link: "/popular-players",
-  },
+  
 ];
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);

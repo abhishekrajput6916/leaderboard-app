@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "../components/Slider";
-import { user1, user2, user3 } from "../assets/assets";
+import { user1, user2, user3, sampleVideo1 } from "../assets/assets";
 
 function AboutUs() {
   const testimonials = [{
@@ -31,10 +31,20 @@ function AboutUs() {
       <section className="py-8 lg:py-14 relative">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-9">
-            <div className="img-box max-w-sm mx-auto">
-              <img src={user3} alt="About Us tailwind page"
-                className="max-lg:mx-auto object-cover rounded-2xl" />
-            </div>
+              <div className="flex justify-center items-center">
+                <video
+                  className="rounded-lg object-cover shadow-lg"
+                  width="640"
+                  height="380"
+                  // controls
+                  autoPlay 
+                  muted
+                  loop        
+                >
+                  <source src={sampleVideo1} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             <div className="lg:pl-[100px] flex items-center">
               <div className="data w-full">
                 <h2
