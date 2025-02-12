@@ -79,7 +79,7 @@ function ScoreBoard() {
           <Link to={"/home"} className="cursor-pointer">
             <button
               name="submit"
-              className="py-1 px-3 mt-2 border-2 lg:text-2xl border-gray-300/50 hover:bg-slate-600 ease-linear transition-all duration-150  rounded-md cursor-pointer "
+              className="py-1 px-3 mt-2 border-2 lg:text-xl border-gray-300/50 hover:bg-slate-600 hover:text-white  ease-linear transition-all duration-150  rounded-md cursor-pointer "
             >Add Players</button>
           </Link>
         </div>

@@ -7,6 +7,8 @@ import Navbar from './components/Navbar'
 import { Toaster } from 'react-hot-toast'
 import Footer from './components/Footer'
 import ScoreBoard from './pages/ScoreBoard'
+import PopularPlayers from './pages/PopularPlayers'
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
       <Route path='/about-us' element={<AboutUs />} />
       <Route path='/contact-us' element={<ContactUs />} />
       <Route path='/scoreboard' element={<ScoreBoard />} />
+      <Route path='/popular-players' element={<PopularPlayers />} />
     </Routes>
     <Toaster  position="bottom-center"/>
     <Footer/>

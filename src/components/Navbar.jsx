@@ -19,6 +19,10 @@ const LINKS = [
     name: "Scoreboard",
     link: "/scoreboard",
   },
+  {
+    name: "Popular Players",
+    link: "/popular-players",
+  },
 ];
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
