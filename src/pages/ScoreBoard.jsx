@@ -7,6 +7,7 @@ import { IoTrophyOutline } from "react-icons/io5";
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { TiUserAdd } from "react-icons/ti";
+import PlayerCard from "../components/PlayerCard";
 
 function ScoreBoard() {
   const players = useSelector((state) => state.players);
@@ -27,7 +28,7 @@ function ScoreBoard() {
   }
   return (
     <>
-      <div className="bg-zinc-100 py-2 px-4 flex w-full justify-between items-center">
+      <div className="bg-zinc-100 py-4 px-4 flex w-full justify-between items-center">
         <div className="bg-amber-50 w-fit flex items-center py-1.5 px-4 gap-2 border=2 rounded-full border-slate-500">
           <IoMdSearch className="text-2xl" />
           <input
@@ -40,37 +41,9 @@ function ScoreBoard() {
         <Link to={'/home'} ><TiUserAdd className="text-xl lg:text-3xl lg:mx-4" /></Link>
       </div>
       {players.length ? (
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-around lg:grid-cols-4 px-4 lg:px-8 gap-2 lg:gap-8 pt-12 pb-20">
           {filteredPlayers.map((player) => (
-            <div
-              key={player.id}
-              className="flex py-4 px-2 items-center justify-between bg-amber-50 border-b-2 border-slate-200 my-1 "
-            >
-              <div className="flex">
-                <a className="inline-block mr-4" href="#">
-                  <img
-                    className="rounded-full max-w-none w-12 h-12"
-                    src={dummyUser}
-                  />
-                </a>
-                <div className="flex flex-col">
-                  <a className="inline-block text-lg font-bold" href="#">
-                    <strong>Name :</strong>{" "}
-                    {player.name.charAt(0).toUpperCase() +
-                      player.name.substring(1).toLowerCase()}
-                  </a>
-                  <div className="text-slate-500 flex items-center gap-1">
-                    <IoTrophyOutline /> {player.score}{" "}
-                  </div>
-                </div>
-              </div>
-              <button
-                onClick={() => handleDelete(player.id)}
-                className="text-red-600 text-2xl mx-4 cursor-pointer"
-              >
-                <MdDeleteForever />
-              </button>
-            </div>
+            <PlayerCard player={player} isManual/>
           ))}
         </div>
       ) : (
