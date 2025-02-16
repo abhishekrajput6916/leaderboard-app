@@ -5,12 +5,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 const Slider = ({ slides }) => {
-    // const swiper = new Swiper('.swiper',{
-    //     modules: [Navigation, Pagination], 
-    // })
     return (
         <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            modules={[Pagination, Scrollbar, A11y]}
             spaceBetween={50}
             slidesPerView={1}
             autoplay = {true}
@@ -18,7 +15,6 @@ const Slider = ({ slides }) => {
             scrollbar={{ draggable: true }}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
-        // className='flex items-center justify-center'
         >
             {slides.map(slide => <SwiperSlide className='p-8'>{slide}</SwiperSlide>)}
         </Swiper>
