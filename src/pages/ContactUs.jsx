@@ -22,8 +22,9 @@ function ContactUs() {
           <Link to={'#'} target="blank"  className='font-semibold w-fit flex gap-2 lg:text-xl items-center'><MdOutlineEmail className='text-lg lg:text-2xl' /><u className='mb-1 cursor-pointer hover:text-slate-500' onClick={() => window.location = 'mailto:abhishekrajput9111606916@gmail.com'}>abc@gmail.com</u></Link>
           <Link to={'tel:+1234567890'} className='font-semibold  w-fit flex gap-2 items-center lg:text-xl'><IoCallOutline className='text-lg lg:text-2xl' /><u className='mb-1 cursor-pointer hover:text-slate-500'>+91 99999 99999</u></Link>
         </div>
-        <div className='w-full rounded-2xl overflow-hidden'>
-          <Map className={"h-56 xl:h-80 w-full object-cover object-left-top"} />
+        <div className='w-full rounded-2xl overflow-hidden border border-gray-400'>
+          <Map className={"h-64 xl:h-80 w-full object-cover object-left-top relative"} />
+        w-
         </div>
       </div>
 

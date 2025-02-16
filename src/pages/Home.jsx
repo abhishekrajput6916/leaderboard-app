@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import Swal from 'sweetalert2'
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addPlayer } from "../redux/Slices/scoresSlice";
 
 function Home() {
-  const [errors, setErrors] = useState({ nameError:  "Name should not be empty!", scoreError:  "Score should not be empty!" });
+  const [errors, setErrors] = useState({ nameError:  "Name should not be empty!", scoreError:  "Score should not be empty!", nameLengthError: "Name length should be more than 1" });
   const [formValues, setFormValues] = useState({});
   const dispatch = useDispatch();
 
@@ -23,9 +24,14 @@ function Home() {
       toast.error(errors.nameError);
     }else if(!formValues.score){
       toast.error(errors.scoreError);
+    }else if (formValues.name.length === 1) {
+      toast.error(errors.nameLengthError);
     }else{
       dispatch(addPlayer(formValues));
-      toast.success("Score added successfully!!!");
+      Swal.fire({
+        title: "Score added successfully!",
+        icon: "success"
+      });
     } 
   }
   return (
