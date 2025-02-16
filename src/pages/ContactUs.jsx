@@ -24,7 +24,6 @@ function ContactUs() {
         </div>
         <div className='w-full rounded-2xl overflow-hidden border border-gray-400'>
           <Map className={"h-64 xl:h-80 w-full object-cover object-left-top relative"} />
-        w-
         </div>
       </div>
 
