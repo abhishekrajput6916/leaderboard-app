@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { removePlayer } from "../redux/Slices/scoresSlice";
+import { useSelector } from "react-redux";
 import { IoMdSearch } from "react-icons/io";
-import { dummyUser } from "../assets/assets";
-import { IoTrophyOutline } from "react-icons/io5";
-import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { TiUserAdd } from "react-icons/ti";
 import PlayerCard from "../components/PlayerCard";
+import { useDispatch } from 'react-redux';
+import { removePlayer } from "../redux/Slices/scoresSlice";
 
 function ScoreBoard() {
-  const players = useSelector((state) => state.players);
   const dispatch = useDispatch();
+  const players = useSelector((state) => state.players);
   const [filteredPlayers, setFilteredPlayers] = useState(players);
-
+  function handleDelete(id) {
+    dispatch(removePlayer(id))
+    setFilteredPlayers(players);
+  }
   function handleSearch(e) {
     // console.log(e.target.value);
     setFilteredPlayers(
@@ -22,10 +23,7 @@ function ScoreBoard() {
       )
     );
   }
-  function handleDelete(id) {
-    dispatch(removePlayer(id))
-    setFilteredPlayers(players);
-  }
+  
   return (
     <>
       <div className="bg-zinc-100 py-4 px-4 flex w-full justify-between items-center">
@@ -43,7 +41,7 @@ function ScoreBoard() {
       {players.length ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-around lg:grid-cols-4 px-4 lg:px-8 gap-2 lg:gap-8 pt-12 pb-20">
           {filteredPlayers.map((player) => (
-            <PlayerCard player={player} isManual/>
+            <PlayerCard player={player} isManual handleDelete={handleDelete}/>
           ))}
         </div>
       ) : (
