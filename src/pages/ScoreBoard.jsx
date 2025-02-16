@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { IoMdSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -6,23 +6,40 @@ import { TiUserAdd } from "react-icons/ti";
 import PlayerCard from "../components/PlayerCard";
 import { useDispatch } from 'react-redux';
 import { removePlayer } from "../redux/Slices/scoresSlice";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 function ScoreBoard() {
   const dispatch = useDispatch();
   const players = useSelector((state) => state.players);
   const [filteredPlayers, setFilteredPlayers] = useState(players);
-  function handleDelete(id) {
-    dispatch(removePlayer(id))
-    setFilteredPlayers(players);
+
+  function handleDelete(id,name) {
+    Swal.fire({
+      title: `Remove ${name.charAt(0).toUpperCase()+name.substring(1).toLowerCase()}`,
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes !"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(removePlayer(id))
+        setFilteredPlayers(players);
+        toast.success(`${name} has been deleted.`);
+      }
+    });
+   
   }
   function handleSearch(e) {
-    // console.log(e.target.value);
     setFilteredPlayers(
       players.filter((player) =>
         player.name.toLowerCase().includes(e.target.value.toLowerCase())
       )
     );
   }
+  useEffect(()=>{ setFilteredPlayers(players)},[players])
   
   return (
     <>
